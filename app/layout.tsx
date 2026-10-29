@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/header";
 import "./globals.css";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "近くの外食ルーレット",
@@ -20,6 +21,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div>
           {children}
         </div>
+        <footer>
+          <Footer/>
+        </footer>
       </body>
     </html>
   );
