@@ -1,4 +1,4 @@
 export const buttonStyle = 
-    "mt-4 px-12 py-2 bg-[#006D5B] text-white text-2xl font-bold rounded-full shadow-lg hover:enabled:bg-[#005545] hover:enabled:scale-105 active:enabled:scale-95 transition-all duration-200 cursor-pointer disabled:bg-gray-400 disabled:text-gray-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+    "mt-4 px-12 py-2 bg-[#006D5B] text-white text-2xl font-bold rounded-full shadow-lg lg:hover:enabled:bg-[#005545] lg:hover:enabled:scale-105 active:enabled:scale-95 transition-all duration-200 cursor-pointer disabled:bg-gray-400 disabled:text-gray-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
 export const redButtonStyle =
-    "mt-4 px-12 py-2 bg-[#D32F2F] text-white text-2xl font-bold rounded-full shadow-lg hover:enabled:bg-[#B71C1C] hover:enabled:scale-105 active:enabled:scale-95 transition-all duration-200 cursor-pointer disabled:bg-gray-400 disabled:text-gray-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
+    "mt-4 px-12 py-2 bg-[#D32F2F] text-white text-2xl font-bold rounded-full shadow-lg lg:hover:enabled:bg-[#B71C1C] lg:hover:enabled:scale-105 active:enabled:scale-95 transition-all duration-200 cursor-pointer disabled:bg-gray-400 disabled:text-gray-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:shadow-none"
