@@ -1,8 +1,18 @@
 import { Shop } from "@/types/hotpepper";
 import Image from "next/image";
 import { shopImageProps } from "@/data/shop_image";
+import React from "react";
 
-export default function ShopCard({ shop, isDetail }: { shop: Shop; isDetail: boolean }) {
+type Props = {
+    shop: Shop;
+    isDetail: boolean;
+}
+
+export const ShopCardMemo = React.memo(function CreateShopCardMemo({ shop, isDetail }: Props) {
+    return <ShopCard shop={shop} isDetail={isDetail} />;
+});
+
+export function ShopCard({ shop, isDetail }: { shop: Shop; isDetail: boolean }) {
     return (
         <div className="bg-white rounded-xl border border-gray-200 shadow-md flex flex-col items-center text-center p-6 h-[700px] object-cover max-w-full gap-3">
             <p>【画像・情報提供：ホットペッパー グルメ】</p>

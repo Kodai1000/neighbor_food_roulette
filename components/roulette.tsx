@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { HotPepperResponse } from "@/types/hotpepper";
-import ShopCard from "@/components/shop_card";
+import { HotPepperResponse, Shop } from "@/types/hotpepper";
+import {ShopCardMemo} from "@/components/shop_card";
 import { buttonStyle, redButtonStyle } from "@/data/button_style";
+import React from "react";
 
 export default function Roulette({ range }: { range: string }) {
+
     const search_range = range;
     const searchParams = useSearchParams();
     const minBudget = searchParams.get("minBudget") ?? "";
@@ -199,7 +201,6 @@ export default function Roulette({ range }: { range: string }) {
                 <h1 className="text-xl m-2">ここ！</h1>
             )}
 
-            {/* 全店舗のカードを維持し、表示だけ切り替える */}
             <div className="m-2">
                 {showRoulette && shops.length > 0 && (
                     <div>
@@ -212,7 +213,7 @@ export default function Roulette({ range }: { range: string }) {
                                         : "hidden"
                                 }
                             >
-                                <ShopCard
+                                <ShopCardMemo
                                     shop={shop}
                                     isDetail={true}
                                 />
