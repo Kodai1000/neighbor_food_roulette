@@ -42,7 +42,7 @@ export default function Home() {
     };
 
     return (
-        <div className="border rounded-xl flex flex-col items-center lg:mx-40 lg:my-10 bg-white p-24">
+        <div className="border rounded-xl flex flex-col items-center lg:mx-40 lg:my-10 bg-white lg:p-24 m-4">
             <h1 className="text-[clamp(2rem,4vw,8rem)] whitespace-nowrap font-bold">
                 今日のご飯を決めよう
             </h1>
@@ -90,7 +90,7 @@ export default function Home() {
                 <button
                     disabled={invalidBudget || budgetStatus !== "ready"}
                     onClick={handleClick}
-                    className={buttonStyle}>
+                    className={`${buttonStyle} block mx-auto lg:mx-0`}>
                     ルーレットを回す
                 </button>
             </div>
@@ -98,11 +98,17 @@ export default function Home() {
             {budgetStatus === "loading" && <p role="status">予算区分を読み込み中...</p>}
             {budgetStatus === "error" && <div role="alert">
                 <p>予算区分を取得できませんでした。</p>
-                <button className={buttonStyle} onClick={() => {
+                <button className={`${buttonStyle} mx-auto lg:mx-0`} onClick={() => {
                     setBudgetStatus("loading");
                     setBudgetRetry((value) => value + 1);
                 }}>再試行</button>
             </div>}
+            <div className="text-lg flex mt-2 md:m-12 border border-gray-400 rounded-xl p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-16 h-16 shrink-0 basis-1/8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                </svg>
+                <p>「ルーレットを回す」ボタンをクリックすると、周辺の飲食店情報を取得するため、位置情報を取得してホットペッパーグルメWebサービスに送信されます。</p>
+            </div>
         </div>
     );
 }
