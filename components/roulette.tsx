@@ -183,7 +183,7 @@ export default function Roulette({ range }: { range: string }) {
 
             {showRoulette && (
                 <button
-                    onClick={() => {
+                    onPointerDown={() => {
                         if (phase === "roulette") {
                             setPhase("slowRoulette");
                         } else if (phase === "result") {
