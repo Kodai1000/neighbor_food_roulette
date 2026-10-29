@@ -120,7 +120,7 @@ export default function Roulette({ range }: { range: string }) {
         if (phase === "roulette") {
             const intervalId = setInterval(() => {
                 setDisplayedShopIndex(prev => prev + 1);
-            }, 250);
+            }, 100);
 
             return () => clearInterval(intervalId);
         }
