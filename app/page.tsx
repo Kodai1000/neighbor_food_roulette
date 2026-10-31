@@ -94,7 +94,6 @@ export default function Home() {
                     ルーレットを回す
                 </button>
             </div>
-            <p>予算はディナー予算にのみ対応しています。</p>
             {invalidBudget && <p role="alert" className="text-red-600">最低金額は最大金額以下にしてください。</p>}
             {budgetStatus === "loading" && <p role="status">予算区分を読み込み中...</p>}
             {budgetStatus === "error" && <div role="alert">
@@ -104,6 +103,7 @@ export default function Home() {
                     setBudgetRetry((value) => value + 1);
                 }}>再試行</button>
             </div>}
+             <p>予算はディナー予算にのみ対応しています。</p>
             <div className="text-lg flex mt-2 md:m-12 border border-gray-400 rounded-xl p-2">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-16 h-16 shrink-0 basis-1/8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
