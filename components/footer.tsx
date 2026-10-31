@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <div
             aria-label="サービス情報"
-            className="mx-auto w-full max-w-xl rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+            className="mx-auto w-full max-w-xl rounded-xl border border-gray-300 bg-white p-4 shadow-sm"
         >
             <div className="mb-3 border-b border-gray-100 pb-2">
                 <h2 className="text-sm font-semibold text-gray-700">
@@ -40,7 +40,7 @@ export default function Footer() {
                 本サイトはリクルートのwebサービスを利用して、個人が開発・運営している非公式サービスです。
             </p>
 
-            <div className="mt-3 mb-3 border-b border-gray-100 pb-2">
+            <div className="mt-3 mb-3 border-b border-gray-300 pb-2">
                 <h2 className="text-sm font-semibold text-gray-700">
                     開発・管理
                 </h2>
@@ -63,6 +63,11 @@ export default function Footer() {
                     >
                         開発者のXを見る ↗
                     </Link>
+                </div>
+            </div>
+            <div className="text-sm mt-4 mx-auto border-t border-gray-300">
+                <div className="flex justify-center mt-2">    
+                    <p>近くの外食ルーレット　</p><Link className="text-sky-600 ml-6" href="/privacy_policy">プライバシーポリシー</Link>
                 </div>
             </div>
             
