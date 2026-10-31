@@ -17,14 +17,14 @@ export default function Roulette({ range }: { range: string }) {
     const [location, setLocation] = useState<[number, number] | null>(null);
     const [hotPepperData, setHotPepperData] = useState<HotPepperResponse | null>(null);
     const [phase, setPhase] = useState<
-        "loading" | "roulette" | "slowRoulette" | "stop" | "result" | "error" | "noResult"
+        "loading" | "roulette" | "slowRoulette" | "stop" | "result" | "api_error" | "location_error" | "noResult"
     >("loading");
     const [displayedShopIndex, setDisplayedShopIndex] = useState<number>(0);
 
     useEffect(() => {
         const geolocation = () => {
             if (!navigator.geolocation) {
-                setPhase("error");
+                setPhase("location_error");
                 return;
             }
 
@@ -36,7 +36,7 @@ export default function Roulette({ range }: { range: string }) {
                 },
                 (error) => {
                     console.error("位置情報の取得に失敗しました:", error);
-                    setPhase("error");
+                    setPhase("location_error");
                 }
             );
         };
@@ -106,7 +106,7 @@ export default function Roulette({ range }: { range: string }) {
             } catch (error) {
                 if (controller.signal.aborted) return;
 
-                setPhase("error");
+                setPhase("api_error");
                 console.error("API取得中にエラーが発生しました:", error);
             }
         };
@@ -165,11 +165,16 @@ export default function Roulette({ range }: { range: string }) {
                 <div>読み込み中...</div>
             )}
 
-            {phase === "error" && (
+            {phase === "location_error" && (
                 <div>
-                    エラーが発生しました。
-                    <br />
-                    しばらくしてからもう一度お試しください。
+                    位置情報が取得できませんでした。
+                </div>
+            )}
+
+            {phase === "api_error" && (
+                <div>
+                    通信中にエラーが発生しました。
+                    時間をおいてもう一度お試しください。
                 </div>
             )}
 
