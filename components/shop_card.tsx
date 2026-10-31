@@ -38,7 +38,7 @@ export function ShopCard({ shop, isDetail }: { shop: Shop; isDetail: boolean }) 
                     </tr>
                     <tr>
                         <th className="bg-gray-100 p-3 text-left font-semibold">
-                            予算
+                            予算(ディナー)
                         </th>
                         <td className="p-3 text-left">
                             {shop.budget?.name}

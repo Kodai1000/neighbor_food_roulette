@@ -94,6 +94,7 @@ export default function Home() {
                     ルーレットを回す
                 </button>
             </div>
+            <p>予算はディナー予算にのみ対応しています。</p>
             {invalidBudget && <p role="alert" className="text-red-600">最低金額は最大金額以下にしてください。</p>}
             {budgetStatus === "loading" && <p role="status">予算区分を読み込み中...</p>}
             {budgetStatus === "error" && <div role="alert">
