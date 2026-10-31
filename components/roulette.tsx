@@ -204,6 +204,10 @@ export default function Roulette({ range }: { range: string }) {
             <div className="m-2">
                 {showRoulette && shops.length > 0 && (
                     <div>
+                        {shops.length == 1 && (
+                            <div>付近の店舗は一件のみ見つかりました</div>
+                        )}
+
                         {shops.map((shop, index) => (
                             <div
                                 key={shop.id}
