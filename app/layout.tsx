@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/header";
 import "./globals.css";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "近くの外食ルーレット",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer>
           <Footer/>
         </footer>
+        <Analytics/>
       </body>
     </html>
   );
