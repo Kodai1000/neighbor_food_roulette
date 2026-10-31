@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
           <li>
             <strong>その他の情報：</strong>
             サービスの利用に伴い、サーバーや外部サービスを通じて自動的に送信される情報。
-            ユーザーが入力した予算に関する情報
+            ユーザーが入力した予算や店舗の検索範囲に関する情報
           </li>
         </ul>
       </section>
@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
           当サイトでは、株式会社リクルートが提供する「ホットペッパーグルメサーチAPI」を利用しています。
         </p>
         <p className="mb-6 leading-7">
-          飲食店情報の検索にあたり、検索に必要な情報(位置情報、入力した予算など)が同社のサービスに送信される場合があります。
+          飲食店情報の検索にあたり、検索に必要な情報(位置情報、入力した予算、店舗の検索範囲など)が同社のサービスに送信されます。
           送信された情報の取り扱いについては、各サービス提供者のプライバシーポリシー等をご確認ください。
         </p>
 
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </section>
 
-      <p className="mt-10 text-sm text-gray-500">制定日：2026年10月31日</p>
+      <p className="mt-10 text-sm text-gray-500">制定日：2026年11月1日</p>
     </main>
   );
 }
