@@ -1,10 +1,3 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "プライバシーポリシー | 近くの外食ルーレット",
-  description: "近くの外食ルーレットにおける個人情報・位置情報等の取り扱いについて説明します。",
-};
-
 export default function PrivacyPolicyPage() {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-10 text-gray-800 bg-white m-4">
