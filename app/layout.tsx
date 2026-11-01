@@ -7,6 +7,13 @@ import { Analytics } from "@vercel/analytics/next"
 export const metadata: Metadata = {
   title: "近くの外食ルーレット",
   description: "現在地付近の飲食店から、あなたの今日のご飯を決めます。",
+  openGraph: {
+    images: [{
+      url: "/ogp.png",
+      width: 1200,
+      height: 630
+    }]
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
