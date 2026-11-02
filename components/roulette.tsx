@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { HotPepperResponse, Shop } from "@/types/hotpepper";
+import { HotPepperResponse } from "@/types/hotpepper";
 import {ShopCardMemo} from "@/components/shop_card";
 import { buttonStyle, redButtonStyle } from "@/data/button_style";
 import React from "react";
@@ -30,10 +30,14 @@ export default function Roulette({ range }: { range: string }) {
 
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    setLocation([latitude, longitude]);
+                    const nextLocation: [number, number] = [position.coords.latitude, position.coords.longitude];
+                    setLocation((currentLocation) =>
+                        currentLocation?.[0] === nextLocation[0] && currentLocation?.[1] === nextLocation[1]
+                            ? currentLocation
+                            : nextLocation
+                    );
                 },
+
                 (error) => {
                     console.error("位置情報の取得に失敗しました:", error);
                     setPhase("location_error");
